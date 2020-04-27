@@ -80,7 +80,7 @@ deploy-local:
 	([ ! -x deploy-local.sh ] || ./deploy-local.sh)
 
 dev: deploy-init deploy-css deploy-rnnoise-binary deploy-lib-jitsi-meet deploy-libflac
-	$(WEBPACK_DEV_SERVER)
+	$(WEBPACK_DEV_SERVER --cert ~/.ssh/x509.cer --key ~/.ssh/server.key)
 
 source-package:
 	mkdir -p source_package/jitsi-meet/css && \
